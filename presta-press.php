@@ -18,42 +18,45 @@
  * Domain Path:       /languages
  */
 
-// If this file is called directly, abort.
+// This file should not be called directly,
+// If it is then WPINC wont be defined so we can abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
 /**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-name-activator.php
+ * Plugin Activation Methods
  */
-function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-	Plugin_Name_Activator::activate();
+function activate_presta_press() {
+	//Require the activation class
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-presta-press-activator.php';
+
+	//Call the activate method to setup our plugin.
+	Presta_Press_Activator::activate();
 }
 /**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-name-deactivator.php
+ * Plugin Deactivation Methods
  */
-function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+function deactivate_presta_press() {
+	//Require the relevant class
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-presta-press-deactivator.php';
+
+	Presta_Press_Deactivator::deactivate();
 }
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_presta_press' );
+register_deactivation_hook( __FILE__, 'deactivate_presta_press' );
 
 /**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
+ * The Core plugin class that controls everything! IN THE WORLD!!!!!! MOOOHAHAHA
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-presta-press.php';
 
 
 /**
  * Instantiate a new instance of the plugin.
  */
-function run_plugin_name() {
-	$plugin = new Plugin_Name();
+function run_presta_press() {
+	$plugin = new Presta_Press();
 	$plugin->run();
 }
-run_plugin_name();
+run_presta_press();
