@@ -1,14 +1,8 @@
 <?php
 /**
- * Plugin Bootstrapping
- *
- * @link              http://github.com/ollywarren
- * @since             1.0.0
- * @package           Presta_Press
- *
  * Plugin Name:       Presta-Press
  * Plugin URI:        https://github.com/ollywarren/presta-press
- * Description:       Integrates with a Prestashop install to automagically grab products related to posts and create adverts in relevant posts.
+ * Description:       Integrates with a Prestashop install to automatically grab products related to posts and create adverts in relevant posts.
  * Version:           1.0.0
  * Author:            Olly Warren
  * Author URI:        http://github.com/ollywarren
